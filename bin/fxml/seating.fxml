@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12.0" styleClass="content-bg" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SeatingController">
+    <padding><Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/></padding>
+    <children>
+        <Label text="Seating Arrangement Generation" styleClass="section-title"/>
+        <HBox spacing="8.0">
+            <children>
+                <TextField fx:id="examNameField" promptText="Exam Name"/>
+                <TextField fx:id="hallsField" promptText="No. of Halls"/>
+                <TextField fx:id="capacityPerHallField" promptText="Capacity Per Hall"/>
+                <Button text="Use Latest Exam" onAction="#autofillExamName" styleClass="nav-button"/>
+                <Button text="Generate Seating" onAction="#generateSeating" styleClass="accent-button"/>
+                <Button text="Refresh" onAction="#refreshTable" styleClass="nav-button"/>
+            </children>
+        </HBox>
+        <TableView fx:id="seatingTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="studentCol" text="Student Name" prefWidth="180.0"/>
+                <TableColumn fx:id="rollCol" text="Roll Number" prefWidth="130.0"/>
+                <TableColumn fx:id="deptCol" text="Department" prefWidth="140.0"/>
+                <TableColumn fx:id="semCol" text="Semester" prefWidth="90.0"/>
+                <TableColumn fx:id="examCol" text="Exam Name" prefWidth="140.0"/>
+                <TableColumn fx:id="hallCol" text="Hall Number" prefWidth="120.0"/>
+                <TableColumn fx:id="seatCol" text="Seat Number" prefWidth="120.0"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>
